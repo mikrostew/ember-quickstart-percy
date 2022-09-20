@@ -50,6 +50,8 @@ jobs:
     name: "Percy"
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
