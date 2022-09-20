@@ -7,7 +7,7 @@ import percySnapshot from '@percy/ember';
 module('Integration | Component | people-list', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
+  test('it renders [visual]', async function (assert) {
     assert.expect(5);
 
     await render(hbs`<PeopleList />`);

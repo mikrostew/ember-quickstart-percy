@@ -45,3 +45,20 @@ jobs:
         run: yarn install
       - name: Run Tests
         run: yarn test
+
+  visual-regression:
+    name: "Percy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+      - name: Install Dependencies
+        run: yarn install
+      - name: Percy Test
+        run: yarn percy exec -- ember test --filter="[visual]"
